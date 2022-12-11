@@ -1,0 +1,20 @@
+<h2>lista works!</h2>
+<div *ngIf="heroiRemovido; else naoRemovido">
+  <h3>
+    Herói removido:
+    <span>{{heroiRemovido}}</span>
+  </h3>
+</div>
+
+<ng-template #naoRemovido>
+  <h3>Nenhum herói foi removido da lista</h3>
+</ng-template>
+
+<button (click)="apagarHeroi()">Apagar</button>
+
+<ul style="list-style: none;">
+  <li *ngFor="let heroi of herois; let i = index">
+    {{i+1}} - {{heroi}}
+  </li>
+</ul>
+
