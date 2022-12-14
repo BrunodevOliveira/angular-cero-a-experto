@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Ipersonagem {
-  nome: string;
-  poder: number;
-}
+import { Ipersonagem } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'main-page',
@@ -11,10 +8,18 @@ interface Ipersonagem {
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
+  //! O objetivo de MAin-page é distribuir os dados aos seus elementos filhos
+
   novoPersonagem: Ipersonagem = {
-    nome: 'Trunks',
-    poder: 14000,
+    nome: 'Tao Pai Pai',
+    poder: 1800,
   };
+
+  /** Acesso as propriedades do serviço através de Getters
+    get personagens(): Array<Ipersonagem> {
+      return this.dbzService.personagens;
+    }
+  */
 
   constructor() {}
 
@@ -26,11 +31,12 @@ export class MainPageComponent implements OnInit {
     console.log(event);
   }
 
-  //* o FormsModule é a maneira do Angular envia fomrulários de forma personalizada
+  //! o FormsModule é a maneira do Angular envia fomrulários de forma personalizada
   enviarForm() {
-    console.log(this.novoPersonagem);
+    // console.log(this.novoPersonagem);
   }
 
+  //^Forma vanilla de capturar os dados do template para p componente.
   trocarNome(event: any) {
     console.log(event.target.value);
   }

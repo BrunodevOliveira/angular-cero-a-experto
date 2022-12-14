@@ -6,13 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.css'],
 })
 export class ListaComponent implements OnInit {
-  constructor() {
-    console.log('constructor');
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log('ngOnInit');
-  }
+  ngOnInit(): void {}
 
   herois: Array<string> = [
     'Homem Aranha',

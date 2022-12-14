@@ -2,44 +2,12 @@
 <hr />
 <div class="row">
   <div class="col">
-    <h3>Personages</h3>
-    <hr />
-    <ul>
-      <li>Krillin - 700</li>
-      <li>Goku - 15.000</li>
-      <li>vegeta - 8.500</li>
-    </ul>
+    <personagens></personagens>
   </div>
 
   <div class="col">
-    <h3>
-      Adicionar <small>{{ novoPersonagem.nome }}</small>
-    </h3>
-    <hr />
-    <!-- Os parênteses significa que estamos chamando um evento -->
-    <!-- [] Colchetes para atribuir alguma propriedade JS a propriedade HTML (OneWayDataBinding) -->
-    <form (ngSubmit)="enviarForm()">
-      <input
-        type="text"
-        placeholder="Nome do personagem"
-        name="nome"
-        [(ngModel)]="novoPersonagem.nome"
-      />
-      <!--
-        Maneira tradicional:
-        [value]="novoPersonagem.nome" -> Captura o valor do JS
-        (input)="trocarNome($event)"-> modifica o valor
-
-        Maneira angular:
-        [()] -> Captura o valor do JS e modifica esse valor pelo HTML (twoWayDataBinding)
-       -->
-      <input
-        type="number"
-        placeholder="Poder"
-        name="poder"
-        [(ngModel)]="novoPersonagem.poder"
-      />
-      <button type="submit">Adicionar</button>
-    </form>
+    <add-personagem
+      [novoPersonagem]="novoPersonagem"
+    ></add-personagem>
   </div>
 </div>
