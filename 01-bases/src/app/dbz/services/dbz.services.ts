@@ -26,7 +26,7 @@ export class DbzService {
 
   /**
    * ! Não utilizei [set] por opção do professor
-   * ^ lembrando que get e set não são métodos (apesar de serrem definidos como um) para serem chamados com ".adicionarPersonagem()".
+   * ^ lembrando que get e set não são métodos (apesar de serem escritos como um) para serem chamados com ".adicionarPersonagem()".
    * * Eles são uma especie de "atributo" então a forma correta de utilizar em outros locais seria "adicionarPersonagem = personagem"
    */
   adicionarPersonagem(novoPersonagem: Ipersonagem) {

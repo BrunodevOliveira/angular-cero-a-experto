@@ -14,6 +14,8 @@ export class PersonagensComponent implements OnInit {
     return this.dbzService.personagens;
   }
 
+  //! Não funciona ->  personagens = this.dbzService.personagens;
+
   constructor(private dbzService: DbzService) {}
 
   ngOnInit(): void {}

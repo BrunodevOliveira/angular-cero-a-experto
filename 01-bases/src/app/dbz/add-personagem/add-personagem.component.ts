@@ -26,11 +26,11 @@ export class AddPersonagemComponent implements OnInit {
 
   adicionarPersonagem() {
     if (this.novoPersonagem.nome.trim().length === 0) return;
-    console.log(this.novoPersonagem);
 
     //~ com o método emit, enviamos o dado ao componente pai
     // this.onNovoPersonagem.emit(this.novoPersonagem);
 
+    // ! Adiciono novo personagem no array central do serviço
     this.dbzService.adicionarPersonagem(this.novoPersonagem);
 
     this.novoPersonagem = {
