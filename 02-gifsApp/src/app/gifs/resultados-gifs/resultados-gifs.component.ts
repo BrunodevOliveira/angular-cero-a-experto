@@ -7,7 +7,11 @@ import { GifsServices } from '../services/gifs-services.service';
   styles: [],
 })
 export class ResultadosGifsComponent implements OnInit {
-  constructor() {}
+  get resultados() {
+    return this.gifsServices.resultadoDaBusca;
+  }
+
+  constructor(private gifsServices: GifsServices) {}
 
   ngOnInit(): void {}
 }
