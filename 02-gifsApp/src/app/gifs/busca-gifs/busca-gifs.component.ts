@@ -14,10 +14,10 @@ export class BuscaGifsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  pegarTitulo() {
-    const conteudo = this.titulo.nativeElement;
-    console.log('titulo anterior: ', conteudo.innerText);
-    conteudo.innerHTML = `<h1 style="color: red">Buscandooo🥱</h1>`;
+  mudarTitulo() {
+    const conteudoHTML = this.titulo.nativeElement;
+    console.log('titulo anterior: ', conteudoHTML.innerText);
+    conteudoHTML.innerHTML = `<h1 style="color: red">Buscandooo🥱</h1>`;
   }
 
   buscar() {
