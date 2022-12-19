@@ -3,14 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'por-pais',
   templateUrl: './por-pais.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class PorPaisComponent implements OnInit {
+  termo: string = '';
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  buscar() {
+    console.log(this.termo);
   }
-
 }
