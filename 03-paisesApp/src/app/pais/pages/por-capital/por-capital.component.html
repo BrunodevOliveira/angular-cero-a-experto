@@ -1,1 +1,22 @@
-<p>por-capital works!</p>
+<h2>Por Capital</h2>
+<hr />
+<div class="row">
+  <div class="col">
+    <pais-input
+      (onEnter)="buscar( $event )"
+      placeholder="Buscar por capital.."
+    ></pais-input>
+  </div>
+</div>
+
+<hr />
+
+<div class="alert alert-danger" *ngIf="erroNaRequisicao">
+  Não foi encontrado o termo buscado <strong>{{termo}}</strong>
+</div>
+
+<div class="row" *ngIf="capital.length > 0">
+  <div class="col">
+    <pais-tabela [paises]="capital"></pais-tabela>
+  </div>
+</div>

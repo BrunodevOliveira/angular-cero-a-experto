@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
@@ -11,6 +11,8 @@ export class PaisInputComponent implements OnInit {
 
   //Será emitido quando a pessoa deixar de escrever
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
+
+  @Input() placeholder: string = '';
 
   //Por ser um Observable consigo fazer uso de métodos do RXJS
   debouncer: Subject<string> = new Subject();
@@ -30,7 +32,7 @@ export class PaisInputComponent implements OnInit {
   teclaPressionada(event: any) {
     //! usaria o evento se não estivesse utilizando no ngModel para capturar o valor
     //const valor = event.target.value;
-    this.debouncer.next(this.termo); //envio o valor digitado no input para o Observable
+    this.debouncer.next(this.termo); //envio o valor digitado no input para o Observable subscrito no ngOnInit
   }
 
   buscar() {
