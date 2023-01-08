@@ -28,4 +28,10 @@ export class PaisService {
 
     return this.http.get<Country[]>(url);
   }
+
+  buscarPaisPorAlpha(id: string): Observable<Country> {
+    const url = `${this.apiUrl}/alpha/${id}`;
+
+    return this.http.get<Country>(url);
+  }
 }
