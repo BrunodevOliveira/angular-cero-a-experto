@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { Country } from '../interfaces/pais.interface';
@@ -9,12 +9,16 @@ import { Country } from '../interfaces/pais.interface';
 export class PaisService {
   private apiUrl: string = 'https://restcountries.com/v2';
 
+  get httpParams() {
+    return new HttpParams().set('fields', 'name,capital,alpha2Code,flag,population');
+  }
+
   constructor(private http: HttpClient) {}
 
   buscarPais(nome: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${nome}`;
 
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.httpParams });
     /**
      *! Operadores RXJS são funções que serão executadas com base na resposta a requisição
         .pipe(
@@ -26,12 +30,18 @@ export class PaisService {
   buscarCapital(nome: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${nome}`;
 
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, { params: this.httpParams });
   }
 
   buscarPaisPorAlpha(id: string): Observable<Country> {
     const url = `${this.apiUrl}/alpha/${id}`;
 
     return this.http.get<Country>(url);
+  }
+
+  buscarPaisPorRegiao(bloco: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/regionalbloc/${bloco}`;
+
+    return this.http.get<Country[]>(url, { params: this.httpParams });
   }
 }
