@@ -21,16 +21,10 @@ export class PaisInputComponent implements OnInit {
 
   ngOnInit() {
     this.debouncer
-      .pipe(
-        //pipe -> permite tratar os dados antes de entrega-los
-
-        //! Método que recebe os milissegundos que quero esperar antes de emitir o segundo valor(nesse caso a próxima letra)
-        debounceTime(300) //* Com isso estamos dizendo para que não emita um subscribe antes que o Observable 'debouncer' fique 300ms sem receber valor
-      )
+      .pipe(debounceTime(300))
       .subscribe((valor) => this.onDebounce.emit(valor));
   }
   teclaPressionada(event: any) {
-    //! usaria o evento se não estivesse utilizando no ngModel para capturar o valor
     //const valor = event.target.value;
     this.debouncer.next(this.termo); //envio o valor digitado no input para o Observable subscrito no ngOnInit
   }
