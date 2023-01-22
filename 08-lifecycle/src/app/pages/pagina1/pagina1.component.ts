@@ -10,6 +10,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pagina1',
@@ -31,14 +32,19 @@ export class Pagina1Component
     console.log('Constructor');
   }
   nome: string = '';
+  segundos: number = 0;
+  timerSubscription!: Subscription;
 
   ngOnChanges(changes: SimpleChanges): void {
     // ! Se o seu componente não tiver entradas ou você o usar sem fornecer nenhuma entrada, a estrutura não chamará ngOnChanges().
-    console.log('ngOnChanges');
+    console.log('ngOnChanges: ', changes);
   }
 
   ngOnInit(): void {
     console.log('ngOnInit');
+    this.timerSubscription = interval(1000).subscribe(
+      (i) => (this.segundos = i)
+    );
   }
 
   ngAfterViewChecked(): void {
@@ -69,6 +75,8 @@ export class Pagina1Component
       'ngOnDestroy: ',
       'Chamado imediatamente antes de Angular destruir a diretiva ou componente.'
     );
+    this.timerSubscription.unsubscribe();
+    console.log('timer limpado');
   }
 
   guardar() {
