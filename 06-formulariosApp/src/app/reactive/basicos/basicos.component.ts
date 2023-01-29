@@ -44,7 +44,7 @@ export class BasicosComponent implements OnInit {
       this.miFormulario.controls[campo].errors &&
       this.miFormulario.controls[campo].touched
     );
-    //~ Verifica se o campo controlado pelo formGroup já foi tocado e se satisfaz todas as validações criadas no Validators em fb.goup
+    //~ Verifica se o campo controlado pelo formGroup já foi tocado e se satisfaz todas as validações criadas no Validators em fb.goup através do "errors"
   }
 
   guardar() {
