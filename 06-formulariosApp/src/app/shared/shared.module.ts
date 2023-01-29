@@ -4,18 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
-
-
 @NgModule({
-  declarations: [
-    SidemenuComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
-  exports: [
-    SidemenuComponent
-  ]
+  declarations: [SidemenuComponent],
+  imports: [CommonModule, RouterModule],
+  exports: [SidemenuComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
