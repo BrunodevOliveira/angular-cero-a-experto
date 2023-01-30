@@ -1,0 +1,36 @@
+<h1 class="mt-5">Seletores aninhados</h1>
+<hr />
+
+<form [formGroup]="formulario" (ngSubmit)="guardar()">
+  <div class="row">
+    <div class="col-9">
+      <label class="form-label">Continente:</label>
+      <select name="" id="" class="form-control" formControlName="regiao">
+        <option value="">-- Selecione Continente --</option>
+        <option value="1">América</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-9">
+      <button type="submit" class="btn btn-primary float-end">
+        Selecionar
+      </button>
+    </div>
+  </div>
+</form>
+
+<hr />
+
+<h3>Formulario</h3>
+<p>
+  Valid:
+  <span
+    [ngClass]="formulario.valid ? 'text-success' : 'text-danger'"
+    class="fw-bold"
+  >
+    {{ formulario.valid }}
+  </span>
+</p>
+<p>{{ formulario.value | json }}</p>
