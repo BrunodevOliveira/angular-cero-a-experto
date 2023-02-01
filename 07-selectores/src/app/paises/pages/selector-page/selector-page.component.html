@@ -2,12 +2,41 @@
 <hr />
 
 <form [formGroup]="formulario" (ngSubmit)="guardar()">
-  <div class="row">
+  <!-- Regiao -->
+  <div class="row mb-3">
     <div class="col-9">
       <label class="form-label">Continente:</label>
-      <select name="" id="" class="form-control" formControlName="regiao">
+      <select name="" id="" class="form-select" formControlName="regiao">
         <option value="">-- Selecione Continente --</option>
-        <option value="1">América</option>
+        <option *ngFor="let regiao of regioes" [value]="regiao | lowercase">
+          {{ regiao }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Pais -->
+  <div class="row mb-3">
+    <div class="col-9">
+      <label class="form-label">País:</label>
+      <select name="" id="" class="form-select" formControlName="pais">
+        <option value="">-- Selecione o País --</option>
+        <option *ngFor="let pais of paises" [value]="pais.alpha3Code">
+          {{ pais.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Fronteira -->
+  <div class="row mb-3" *ngIf="exibirFronteiras">
+    <div class="col-9">
+      <label class="form-label">Fronteiras:</label>
+      <select name="" id="" class="form-select" formControlName="fronteira">
+        <option value="">-- Selecione uma fronteira --</option>
+        <option *ngFor="let fronteira of fronteiras" [value]="fronteira">
+          {{ fronteira }}
+        </option>
       </select>
     </div>
   </div>
