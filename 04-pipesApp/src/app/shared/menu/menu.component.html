@@ -1,1 +1,7 @@
-<p-menubar [model]="items"></p-menubar>
+<header>
+  <p-menubar [model]="items" classList="p-menubar-end">
+    <ng-template pTemplate="start">
+      <img src="./favicon.ico" />
+    </ng-template>
+  </p-menubar>
+</header>

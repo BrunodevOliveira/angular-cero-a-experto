@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
-
 import { SharedModule } from './shared/shared.module';
+import { VendasModule } from './vendas/vendas.module';
 
-// import { ButtonModule } from 'primeng/button';
-// import { CardModule } from 'primeng/card';
+//! Trocar localidade da aplicação de forma global
+import localeBr from '@angular/Common/locales/pt';
+import localeFr from '@angular/Common/locales/fr';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeBr);
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SharedModule],
-  providers: [],
+  imports: [AppRouterModule, BrowserModule, SharedModule, VendasModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }], //! Passo em useValue a mesma localidade que inportei em localeBr
   bootstrap: [AppComponent],
 })
 export class AppModule {}
