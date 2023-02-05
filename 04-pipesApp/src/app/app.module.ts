@@ -1,5 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,13 @@ registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [AppRouterModule, BrowserModule, SharedModule, VendasModule],
+  imports: [
+    AppRouterModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    VendasModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }], //! Passo em useValue a mesma localidade que inportei em localeBr
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,11 @@ export class AppComponent {
   obj = {
     nome: 'Barbara',
   };
+
+  //! Serve para ter acesso as configurações globais de PrimeNG
+  constructor(private primeNGConfig: PrimeNGConfig) {
+    this.primeNGConfig.ripple = true;
+  }
 
   mostrarNome() {
     console.log(this.nome);

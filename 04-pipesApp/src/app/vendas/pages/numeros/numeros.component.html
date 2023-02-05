@@ -1,1 +1,28 @@
-<p>numeros works!</p>
+<div class="text-layout">
+  <h1>Decima Pipes e Porcentagem</h1>
+  <p>Pipes incluidos no Angular - Frequentemente guardados no Common Module</p>
+</div>
+
+<div class="grid">
+  <div class="col-4">
+    <p-card header="Vendas líquidas" subheader="do ano corrente">
+      <i class="pi pi-dollar"></i>
+      {{ vendasLiquidas | number : "1.2-2" }}
+      <!-- 1 é a parte inteira e 2-2 significa que quero ter 2 decimais '-' é igual 'até' -->
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Vendas brutas" subheader="do ano corrente">
+      {{
+        vendasLiquidas + 2000000 | currency : "R$" : "symbol-narrow" : "1.4-4"
+      }}
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Ganho percentual" subheader="do ano corrente">
+      {{ procentagem | percent : "1.2-2" }}
+    </p-card>
+  </div>
+</div>

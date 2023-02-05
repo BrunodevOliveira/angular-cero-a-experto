@@ -1,1 +1,74 @@
-<p>incomum works!</p>
+<div class="text-layout">
+  <h1>Pipes pouco utilizados</h1>
+  <p>Pipes incluidos no Angular - Frequentemente guardados no Common Module</p>
+</div>
+
+<div class="grid text-layout">
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saldações {{ nome }}, é um prazer
+        {{ genero | i18nSelect : trocaGeneroPalavra }}
+        ao nosso evento.
+      </p>
+      <button
+        pButton
+        label="Trocar pessoa"
+        class="p-button-help"
+        (click)="trocarCliente()"
+      ></button>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>Atualmente {{ clientes.length | i18nPlural : clientesMapa }}</p>
+      <button
+        pButton
+        class="p-button-danger"
+        label="Excluir cliente"
+        (click)="excluirCliente()"
+      ></button>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{ herois | json }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{ clientes }}</pre>
+
+      <b>slice:0:2</b>
+      <pre>{{ clientes | slice : 0 : 2 }}</pre>
+
+      <b>slice:1:2</b>
+      <pre>{{ clientes | slice : 1 : 2 }}</pre>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of pessoa | keyvalue">
+          <b>{{ item.key | titlecase }}:</b> {{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <p>
+        Subscreve internamente no observable e exibe o valor de cada emissão
+      </p>
+      <!-- Só é exibido enquanto meObservable não emitir nenhum valor. Como estamos utilizando 2 async, cada um será uma subscrção diferente -->
+      <pre *ngIf="!(meuObservable | async)">Carregando informação..</pre>
+      <pre>{{ meuObservable | async }}</pre>
+    </p-fieldset>
+  </div>
+</div>
