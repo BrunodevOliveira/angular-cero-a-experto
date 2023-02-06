@@ -1,1 +1,63 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+  <h1>Pipes Personalizados</h1>
+  <p>
+    Pipes criados pelo {{ "desenvolvedor" | maiusculas : maiusculaOuMinuscula }}
+  </p>
+
+  <button
+    pButton
+    label="Trocar para maiúsculas"
+    class="p-button-help mb-5"
+    (click)="toggleMaiusculas()"
+  ></button>
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start"></div>
+
+  <div class="p-toolbar-group-end">
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Ordenar por nome"
+      class="mr-1"
+      (click)="trocarOrdem('nome')"
+    ></button>
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Voar"
+      class="mr-1 p-button-success"
+      (click)="trocarOrdem('voa')"
+    ></button>
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Cor"
+      class="mr-1 p-button-help"
+      (click)="trocarOrdem('color')"
+    ></button>
+  </div>
+</p-toolbar>
+
+<div class="grid">
+  <div class="col mt-3">
+    <p-table [value]="herois | ordenarNome : ordenarPor">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nome</th>
+          <th>Voa</th>
+          <th>Cor</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-heroi>
+        <tr>
+          <td>{{ heroi.nome }}</td>
+          <td>{{ heroi.voa | voa | titlecase }}</td>
+          <td>{{ heroi.color }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
