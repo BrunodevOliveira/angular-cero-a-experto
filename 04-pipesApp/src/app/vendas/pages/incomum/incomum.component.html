@@ -4,6 +4,7 @@
 </div>
 
 <div class="grid text-layout">
+  <!-- ! i18nSelect -->
   <div class="col md:col-6">
     <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
       <p>
@@ -20,6 +21,7 @@
     </p-fieldset>
   </div>
 
+  <!--! i18nPlural -->
   <div class="col md:col-6">
     <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
       <p>Atualmente {{ clientes.length | i18nPlural : clientesMapa }}</p>
@@ -32,12 +34,14 @@
     </p-fieldset>
   </div>
 
+  <!--! Json -->
   <div class="col md:col-6">
     <p-fieldset legend="Json Pipe" [toggleable]="true">
       <pre>{{ herois | json }}</pre>
     </p-fieldset>
   </div>
 
+  <!--! Slice -->
   <div class="col md:col-6">
     <p-fieldset legend="Slice Pipe" [toggleable]="true">
       <b>Original</b>
@@ -51,6 +55,7 @@
     </p-fieldset>
   </div>
 
+  <!--! KeyValue -->
   <div class="col md:col-6">
     <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
       <ul>
@@ -61,14 +66,19 @@
     </p-fieldset>
   </div>
 
+  <!--! Async Pipe -->
   <div class="col md:col-6">
     <p-fieldset legend="Async Pipe" [toggleable]="true">
       <p>
         Subscreve internamente no observable e exibe o valor de cada emissão
       </p>
-      <!-- Só é exibido enquanto meObservable não emitir nenhum valor. Como estamos utilizando 2 async, cada um será uma subscrção diferente -->
-      <pre *ngIf="!(meuObservable | async)">Carregando informação..</pre>
-      <pre>{{ meuObservable | async }}</pre>
+
+      <ng-container *ngIf="meuObservable | async as data; else loading">
+        {{ data }}
+      </ng-container>
+      <ng-template #loading>
+        <p>Carregando...</p>
+      </ng-template>
     </p-fieldset>
   </div>
 </div>

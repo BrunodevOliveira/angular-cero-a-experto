@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { interval, tap } from 'rxjs';
+import { delay, interval, tap } from 'rxjs';
 
 @Component({
   selector: 'app-incomum',
@@ -15,6 +15,11 @@ export class IncomumComponent {
     feminino: 'convida-la',
   };
 
+  trocarCliente() {
+    this.nome = 'Barbara';
+    this.genero = 'feminino';
+  }
+
   // i18nPlural
   clientes: string[] = ['Bruno', 'Barbara', 'Gabi', 'Arrascaeta'];
   clientesMapa = {
@@ -23,11 +28,6 @@ export class IncomumComponent {
     '=2': 'temos 2 clientes esperando',
     other: 'temos # clientes esperando',
   };
-
-  trocarCliente() {
-    this.nome = 'Barbara';
-    this.genero = 'feminino';
-  }
 
   excluirCliente() {
     this.clientes.pop();
@@ -58,5 +58,7 @@ export class IncomumComponent {
 
   // Async Pipe
   //! Observable que irá emitir valores numéricos em ordem crescente de 1 em 1 segundo
-  meuObservable = interval(1000).pipe(tap(() => console.log('intervalo')));
+  meuObservable = interval(1000).pipe(
+    tap(() => console.log('intervalo'), delay(2000))
+  );
 }
