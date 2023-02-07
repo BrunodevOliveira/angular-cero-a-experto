@@ -39,6 +39,8 @@ export class OrdenarComponent {
     },
   ];
 
+  celular = '552134537272';
+
   toggleMaiusculas() {
     return (this.maiusculaOuMinuscula = !this.maiusculaOuMinuscula);
   }

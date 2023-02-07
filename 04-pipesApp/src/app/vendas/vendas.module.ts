@@ -14,6 +14,8 @@ import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { MaiusculasPipe } from './pipes/maiusculas.pipe';
 import { VoaPipe } from './pipes/voa.pipe';
 import { OrdenarNomePipe } from './pipes/ordenar-nome.pipe';
+import { FormsModule } from '@angular/forms';
+import { PhonePipe } from './pipes/phone.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { OrdenarNomePipe } from './pipes/ordenar-nome.pipe';
     MaiusculasPipe,
     VoaPipe,
     OrdenarNomePipe,
+    PhonePipe,
   ],
   exports: [
     NumerosComponent,
@@ -31,6 +34,6 @@ import { OrdenarNomePipe } from './pipes/ordenar-nome.pipe';
     BasicosComponent,
     OrdenarComponent,
   ],
-  imports: [CommonModule, PrimeNgModule],
+  imports: [CommonModule, PrimeNgModule, FormsModule],
 })
 export class VendasModule {}

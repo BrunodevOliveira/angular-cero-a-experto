@@ -61,3 +61,25 @@
     </p-table>
   </div>
 </div>
+
+<div class="grid text-layout">
+  <div class="col mt-3">
+    <p-fieldset
+      legend="Pipe Phone"
+      [toggleable]="true"
+      [transitionOptions]="'300ms'"
+    >
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="celular"
+          placeholder="Digite o celular"
+        />
+      </span>
+
+      <h3>Telefone formatado: {{ celular | phone }}</h3>
+    </p-fieldset>
+  </div>
+</div>
