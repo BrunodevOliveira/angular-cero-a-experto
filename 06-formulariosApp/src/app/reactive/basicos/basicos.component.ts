@@ -49,7 +49,7 @@ export class BasicosComponent implements OnInit {
 
   guardar() {
     if (this.miFormulario.invalid) {
-      //Marca todos os campos para que seja ativada a validação do método CamposEsValido()
+      //! Marca todos os campos para que seja ativada a validação do método CamposEsValido()
       this.miFormulario.markAllAsTouched();
       return;
     }

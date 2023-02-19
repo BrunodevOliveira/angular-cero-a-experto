@@ -16,13 +16,14 @@ export class EmailValidatorService implements AsyncValidator {
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     const email = control.value;
+
     console.log(email);
 
     return this.http
       .get<any[]>(`http://localhost:3000/usuarios?q=${email}`)
       .pipe(
         delay(1000),
-        //* uilizando o operador map posso trnasforma o valor da resposta da requisição em null (caso o email não exista) ou em um error(caso exista)
+        //* uilizando o operador map posso trnasforma o valor da resposta (que é uma array) em um objeto contendo null (caso o email não exista) ou um error(caso exista)
         map((resp) => {
           return resp.length == 0 ? null : { emailTomado: true };
         })

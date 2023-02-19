@@ -12,6 +12,7 @@ import {
   noPuedeSerStrider,
 } from 'src/app/shared/validator/validaciones';
 import { EmailValidatorService } from 'src/app/shared/validator/email-validator.service';
+import { distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-registro',
@@ -35,7 +36,7 @@ export class RegistroComponent implements OnInit {
           Validators.required,
           Validators.pattern(this.validatorService.emailPattern),
         ],
-        [this.emailValidator],
+        [this.emailValidator], //!Validação assíncrona
       ],
       username: [
         '',
@@ -83,7 +84,6 @@ export class RegistroComponent implements OnInit {
       password2: '123456',
     });
   }
-
   campoNoValido(campo: string) {
     return (
       this.miFormulario.get(campo)?.invalid &&

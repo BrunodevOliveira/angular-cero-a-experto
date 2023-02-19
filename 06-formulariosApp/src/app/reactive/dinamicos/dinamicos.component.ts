@@ -20,11 +20,12 @@ export class DinamicosComponent implements OnInit {
         ['Angular', Validators.required],
         ['React', Validators.required],
       ],
-      [Validators.required, Validators.minLength(3)] //! indica que o form deve possui pelo menos 3 campos
+      [Validators.required, Validators.minLength(3)]
+      //! indica que o form deve possui pelo menos 3 campos
     ),
   });
 
-  nuevoFavorito: FormControl = this.fb.control('', Validators.required);
+  public nuevoFavorito: FormControl = this.fb.control('', Validators.required);
 
   get favoritosArr() {
     return this.miFormulario.get('favoritos') as FormArray;

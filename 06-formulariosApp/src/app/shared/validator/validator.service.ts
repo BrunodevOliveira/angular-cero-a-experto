@@ -13,7 +13,7 @@ export class ValidatorService {
   // ! Validação personalizada
   noPuedeSerStrider(control: FormControl): ValidationErrors | null {
     const valor = control.value?.trim().toLowerCase();
-    if (valor === 'strider') {
+    if (valor.includes('strider')) {
       return {
         noStrider: true,
       };
@@ -29,13 +29,13 @@ export class ValidatorService {
       const pass2 = formGroup.get(campo2)?.value;
 
       if (pass1 !== pass2) {
-        formGroup.get(campo2)?.setErrors({ noIguales: true }); //pego o segundo campo e estabeleço o erro
+        formGroup.get(campo2)?.setErrors({ noIguales: true }); //! pego o segundo campo e estabeleço o erro. Faço isso pois a única validação que temos no 'password2' e´required
         return {
           noIguales: true,
         };
       }
 
-      formGroup.get(campo2)?.setErrors(null);
+      formGroup.get(campo2)?.setErrors(null); //* Caso o usuário erre a confirmação da senha e digite novamente corrigindo o erro, esse método remove o erro setado no if acima.
 
       return null;
     };
