@@ -19,7 +19,6 @@ export class SelectorPageComponent implements OnInit {
 
   regioes: string[] = [];
   paises: PaisSmall[] = [];
-  // fronteiras: string[] = [];
   fronteiras: PaisSmall[] = [];
   carregando = false;
 

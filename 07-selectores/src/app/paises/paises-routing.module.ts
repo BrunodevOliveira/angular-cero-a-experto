@@ -6,8 +6,8 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'seletor', component: SelectorPageComponent },
-      { path: '**', redirectTo: 'seletor' },
+      { path: 'seletores-aninhados', component: SelectorPageComponent },
+      { path: '**', redirectTo: 'seletores-aninhados' },
     ],
   },
 ];
