@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListaComponent } from './pages/lista/lista.component';
 import { HeroisRoutingModule } from './herois-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { HeroiCartaoComponent } from './components/heroi-cartao/heroi-cartao.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { MaterialModule } from '../material/material.module';
     HeroiComponent,
     HomeComponent,
     ListaComponent,
+    HeroiCartaoComponent,
+    ImagePipe,
   ],
   imports: [
     CommonModule,
