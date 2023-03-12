@@ -1,3 +1,4 @@
+import { ErrorPageComponent } from './../shared/error-page/error-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -34,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'listar',
+        component: ErrorPageComponent,
       },
     ],
   },
