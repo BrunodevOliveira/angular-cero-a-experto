@@ -1,1 +1,9 @@
-<p>heroi works!</p>
+<mat-grid-list cols="1" *ngIf="!heroi; else contentHeroi">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #contentHeroi>
+  {{ heroi | json }}
+</ng-template>
