@@ -12,6 +12,7 @@ import { MaterialModule } from '../material/material.module';
 import { HeroiCartaoComponent } from './components/heroi-cartao/heroi-cartao.component';
 import { ImagePipe } from './pipes/image.pipe';
 import { FormsModule } from '@angular/forms';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     ListaComponent,
     HeroiCartaoComponent,
     ImagePipe,
+    ConfirmarComponent,
   ],
   imports: [
     CommonModule,
