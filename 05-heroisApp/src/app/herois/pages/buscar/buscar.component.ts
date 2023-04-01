@@ -22,6 +22,7 @@ export class BuscarComponent {
   }
 
   opcaoSelecionada(event: MatAutocompleteSelectedEvent) {
+    //Event-> recebe o valor selecionado da tag mat-option
     //^ Caso o termo digitado n exista, será exibido a msg de 'heroi não encontrado' e se mesmo assim o usuário clicar nessa msg previnimos a execução da requisição
     if (!event.option.value) return;
 
