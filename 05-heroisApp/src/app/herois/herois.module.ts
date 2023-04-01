@@ -11,6 +11,7 @@ import { HeroisRoutingModule } from './herois-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { HeroiCartaoComponent } from './components/heroi-cartao/heroi-cartao.component';
 import { ImagePipe } from './pipes/image.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ImagePipe } from './pipes/image.pipe';
     HeroisRoutingModule,
     FlexLayoutModule,
     MaterialModule,
+    FormsModule,
   ],
 })
 export class HeroisModule {}

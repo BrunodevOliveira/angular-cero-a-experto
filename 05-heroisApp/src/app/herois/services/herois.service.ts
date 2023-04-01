@@ -17,4 +17,9 @@ export class HeroisService {
   getHeroi(id: string): Observable<Herois> {
     return this.http.get<Herois>(`${this.url}/${id}`);
   }
+
+  getSugestoes(termoDeBusca: string): Observable<Herois[]> {
+    const busca = `?q=${termoDeBusca}&_limit=6`;
+    return this.http.get<Herois[]>(this.url + busca);
+  }
 }
