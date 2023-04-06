@@ -27,8 +27,6 @@ export class AuthService {
   }
 
   verificarAutenticacao(): Observable<boolean> {
-    const token = sessionStorage.getItem('token');
-    //Transforma o "token" em um booleano sendo verificando o valor que ele contem. Se for truthy, verdaeiro caso contrário falso
     if (!sessionStorage.getItem('token')) return of(false);
 
     return this.http.get<Auth>(`${this.url}/1`).pipe(
