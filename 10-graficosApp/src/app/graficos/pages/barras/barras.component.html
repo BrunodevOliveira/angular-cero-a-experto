@@ -1,1 +1,24 @@
-<p>barras works!</p>
+<h1>Gráfico de Barras</h1>
+<hr />
+<div class="row">
+  <div class="col">
+    <canvas
+      baseChart
+      class="chart"
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="barChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"
+    >
+    </canvas>
+
+    <button
+      class="btn float-end"
+      style="background-color: deeppink; color: white; font-weight: bold"
+      (click)="randomize()"
+    >
+      Atualizar
+    </button>
+  </div>
+</div>

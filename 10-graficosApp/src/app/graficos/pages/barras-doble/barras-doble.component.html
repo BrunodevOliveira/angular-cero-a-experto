@@ -1,1 +1,19 @@
-<p>barras-doble works!</p>
+<h1>Gráficos Duplos</h1>
+<hr />
+<div class="row">
+  <div class="col-md-6">
+    <app-grafico-barra
+      [horizontal]="true"
+      [inputDatasets]="produtoData.datasets"
+      [inputLabels]="provedoresData.labels"
+    >
+    </app-grafico-barra>
+  </div>
+  <div class="col-md-6">
+    <app-grafico-barra
+      [inputDatasets]="provedoresData.datasets"
+      [inputLabels]="provedoresData.labels"
+    >
+    </app-grafico-barra>
+  </div>
+</div>
