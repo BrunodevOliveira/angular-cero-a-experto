@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgChartsModule } from 'ng2-charts';
 
@@ -9,6 +10,7 @@ import { BarrasDobleComponent } from './pages/barras-doble/barras-doble.componen
 import { DonutComponent } from './pages/donut/donut.component';
 import { DonutHttpComponent } from './pages/donut-http/donut-http.component';
 import GraficoBarraComponent from './components/grafico-barra/grafico-barra.component';
+import { GraficosService } from './services/graficos.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,12 @@ import GraficoBarraComponent from './components/grafico-barra/grafico-barra.comp
     DonutHttpComponent,
     GraficoBarraComponent,
   ],
-  imports: [CommonModule, GraficosRoutingModule, NgChartsModule],
+  imports: [
+    CommonModule,
+    GraficosRoutingModule,
+    NgChartsModule,
+    HttpClientModule,
+  ],
+  providers: [GraficosService],
 })
 export class GraficosModule {}
