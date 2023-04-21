@@ -18,7 +18,10 @@ export class AuthGuard {
 
   //* Previne que o usuário carregue o módulo que o 'canLoad' esteja protegendo.
   //! Suponha que vc logue e seja redirecionado a tela de listar herói e em seguiga deslogue. Como o módulo "Herois" já foi carregado uma vez, vc mesmo sem logar irá conseguir ter acesso a ele.
-  canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> | boolean {
+  canMatch(
+    route: Route,
+    segments: UrlSegment[]
+  ): Observable<boolean> | boolean {
     // return !!this.authService.auth.id;
     return this.authService.verificarAutenticacao().pipe(
       tap((estaAutenticado) => {

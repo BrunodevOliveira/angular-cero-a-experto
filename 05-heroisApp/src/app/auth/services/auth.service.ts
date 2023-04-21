@@ -1,4 +1,4 @@
-import { map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Auth } from '../interfaces/auth.interface';
@@ -30,10 +30,9 @@ export class AuthService {
     if (!sessionStorage.getItem('token')) return of(false);
 
     return this.http.get<Auth>(`${this.url}/1`).pipe(
-      map((user) => {
-        this._auth = user;
-        return user.id ? true : false;
-      })
+      tap((user) => (this._auth = user)),
+      map((user) => (user.id ? true : false)),
+      catchError((_) => of(false))
     );
     //  Map -> Transforma o valor que é retornado do observabel
     //salvo os dados em "this._auth" para que, ao recarregar a página, possamos reatribuir o valor perdido em memória dessa propriedade. Como esse método é chamado no canActivate e canLoad sempre teremos os dados do usuário logado disponíveis

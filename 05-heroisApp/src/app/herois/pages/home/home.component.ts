@@ -22,6 +22,7 @@ export class HomeComponent {
   }
 
   logout() {
+    sessionStorage.removeItem('token');
     this.router.navigate(['/auth/login']);
   }
 }
