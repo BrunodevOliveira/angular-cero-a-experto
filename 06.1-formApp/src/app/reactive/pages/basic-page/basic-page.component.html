@@ -1,0 +1,97 @@
+<h2>Reactivos: Básicos</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
+      <!-- Campo de produto -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Produto</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nome do produto"
+            formControlName="name"
+          />
+
+          <span *ngIf="isInvalidField('name')" class="form-text text-danger">
+            {{ getFieldError("name") }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Campo de Preço -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Preço</label>
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Preço do produto"
+            formControlName="price"
+          />
+          <span *ngIf="isInvalidField('price')" class="form-text text-danger">
+            O preço deve ser maior que 0
+          </span>
+        </div>
+      </div>
+
+      <!-- Campo de Quantidade -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Quantidade</label>
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Quantidade do produto"
+            formControlName="inStorage"
+          />
+
+          <span
+            *ngIf="isInvalidField('inStorage')"
+            class="form-text text-danger"
+          >
+            A quantidade deve ser maior do que 0
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary float-end">
+            Salvar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{ myForm.valid | json }}</pre>
+
+    <span>Pristine - indica se o form NÃO foi tocado nem manipulado</span>
+    <pre>{{ myForm.pristine | json }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ myForm.touched | json }}</pre>
+
+    <span>Value</span>
+    <pre>{{ myForm.value | json }}</pre>
+
+    <span>Preço</span>
+    <pre>{{ myForm.controls["price"].value | json }}</pre>
+
+    <span>Preço - Errors</span>
+    <pre>{{ myForm.controls["price"].errors | json }}</pre>
+
+    <span>Produto</span>
+    <pre>{{ myForm.controls["name"].value | json }}</pre>
+
+    <span>Produto - Errors</span>
+    <pre>{{ myForm.controls["name"].errors | json }}</pre>
+  </div>
+</div>
