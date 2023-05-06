@@ -7,7 +7,9 @@
     <label class="col-sm-3 col-form-label">Nome</label>
     <div class="col-sm-9">
       <input formControlName="name" class="form-control" placeholder="Nome" />
-      <span class="form-text text-danger"> error message </span>
+      <span *ngIf="isInvalidField('name')" class="form-text text-danger">
+        Campo obrigatório
+      </span>
     </div>
   </div>
 
@@ -51,7 +53,7 @@
             Excluir
           </button>
         </div>
-        <span class="form-text text-danger"> Este campo es requerido </span>
+        <!-- <span class="form-text text-danger"> Campo obrigatório </span> -->
       </div>
     </div>
   </div>
