@@ -39,6 +39,7 @@ export class ProductComponent
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges');
+    // ! Utilizamos para verificar as mudanças nos Inputs
   }
 
   ngDoCheck(): void {
