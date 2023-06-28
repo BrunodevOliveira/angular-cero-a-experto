@@ -1,0 +1,18 @@
+<div class="container">
+	<form class="container__form" [formGroup]="formulario">
+		<h1>Registro de Libros</h1>
+		<label>Titulo</label>
+		<input class="field" formControlName="title" />
+		<span class="error" *ngIf="formulario.controls['title'].hasError('required')">Ingrese el titulo</span>
+
+		<label>Calificación</label>
+		<input-star-rating formControlName="rating" />
+		<span class="error" *ngIf="formulario.controls['rating'].hasError('min')">La calificación mínima es 3</span>
+		<button type="button" (click)="clickSave()">Save</button>
+	</form>
+</div>
+<pre>
+  {{formulario.value | json}}
+
+  Formulário Válido: {{formulario.valid}}
+</pre>

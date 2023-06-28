@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BasicPageComponent } from './pages/basic-page/basic-page.component';
+import { ComponentePersonalizadoComponent } from './pages/componente-personalizado/componente-personalizado.component';
 import { DynamicPageComponent } from './pages/dynamic-page/dynamic-page.component';
 import { SwitchesPageComponent } from './pages/switches-page/switches-page.component';
 
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'switches',
         component: SwitchesPageComponent,
+      },
+      {
+        path: 'personalizado',
+        component: ComponentePersonalizadoComponent,
       },
       {
         path: '**',

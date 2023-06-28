@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.field {
+	width: 360px;
+	background: #fff;
+	color: black;
+	font: inherit;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: 0;
+	padding: 13px 18px;
+	border-radius: 1em;
+}
+
+.error {
+	color: red;
+}
