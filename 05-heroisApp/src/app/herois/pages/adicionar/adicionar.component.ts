@@ -10,14 +10,7 @@ import { ConfirmarComponent } from '../../components/confirmar/confirmar.compone
 @Component({
   selector: 'app-adicionar',
   templateUrl: './adicionar.component.html',
-  styles: [
-    `
-      img {
-        width: 100%;
-        border-radius: 4px;
-      }
-    `,
-  ],
+  styleUrls:['./adicionar.component.scss'],
 })
 export class AdicionarComponent implements OnInit {
   public publishers = [
@@ -103,5 +96,9 @@ export class AdicionarComponent implements OnInit {
     this.snackBar.open(mensagem, 'ok!', {
       duration: 2500,
     });
+  }
+
+  enviarModal() {
+    console.log('enviou')
   }
 }

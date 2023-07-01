@@ -37,4 +37,7 @@ export class HeroiComponent implements OnInit {
   voltar() {
     this.router.navigate(['/herois/listar']);
   }
+  enviar() {
+    console.log('Enviou o fomrulário')
+  }
 }

@@ -13,6 +13,8 @@ import { HeroiCartaoComponent } from './components/heroi-cartao/heroi-cartao.com
 import { ImagePipe } from './pipes/image.pipe';
 import { FormsModule } from '@angular/forms';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
+import { SharedModule } from '../shared/shared.module';
+import { ModalResumoHeroiComponent } from './components/modal-resumo-heroi/modal-resumo-heroi.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
     HeroiCartaoComponent,
     ImagePipe,
     ConfirmarComponent,
+    ModalResumoHeroiComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +34,7 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
     FlexLayoutModule,
     MaterialModule,
     FormsModule,
+    SharedModule
   ],
 })
 export class HeroisModule {}

@@ -87,6 +87,21 @@
         Excluir
       </button>
     </div>
+    <div fxLayout>
+      <button mat-raised-button color="warn" (click)="modal.toggle()">
+        Mosatra modal
+      </button>
+      <modal-personalizado #modal>
+        <div class="conteudo ">
+          <h2>Outro modal</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis atque officiis natus tenetur, ea id hic distinctio vel molestiae non laudantium nobis incidunt velit animi qui voluptas alias dolorum. A.</p>
+        </div>
+        <div class="acoes">
+          <button mat-raised-button color="warn" (click)="modal.toggle()">fechar</button>
+          <button mat-raised-button color="primary" (click)="modal.toggle(); enviarModal()">Adicionar</button>
+        </div>
+      </modal-personalizado>
+    </div>
   </div>
 
   <div fxFlex="50">

@@ -1,0 +1,35 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #333;
+  min-width: 320px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  min-width: 320px;
+  max-height: 60vmax;
+  overflow-y: scroll;
+}
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
+.modal .Actions__Modal {
+  display: flex;
+  justify-content: space-around;
+  margin-block: 2rem;
+}

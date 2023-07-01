@@ -34,6 +34,22 @@
       </mat-list>
       <br />
       <button mat-button color="warn" (click)="voltar()">Voltar</button>
+      <br>
+      <button mat-button color="primary" (click)="modalInstancia.toggle()">Próxima etapa</button>
+      <modal-personalizado #modalInstancia>
+        <div class="conteudo">
+          <modal-resumo-heroi/>
+        </div>
+
+        <div class="acoes" style="display: flex; justify-content: space-around;">
+          <button
+          (click)="modalInstancia.toggle();"
+          class="btn-primario" mat-button color="warn">Cancelar</button>
+          <button
+          (click)="modalInstancia.toggle(); enviar()"
+          class="btn-primario" mat-button color="primary">Enviar</button>
+        </div>
+      </modal-personalizado>
     </div>
   </div>
 </ng-template>
