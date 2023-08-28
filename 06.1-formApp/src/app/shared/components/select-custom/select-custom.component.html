@@ -1,0 +1,17 @@
+<div class="FormContent">
+  <label for="select1">Escolha a nomenclatura da receita</label>
+  <article class="dropdown" toggleClass id="1">
+    <input
+      type="text"
+      class="textBox"
+      placeholder="Clique aqui para selecionar"
+      readonly
+    />
+    <div class="option">
+      <option (click)="setValorForm('1', 'Primeiro')">Primeiro tipo</option>
+      <option (click)="setValorForm('1', 'Segundo')">Segundo tipo</option>
+      <option (click)="setValorForm('1', 'Terceiro')">Terceiro tipo</option>
+      <option (click)="setValorForm('1', 'Quarto')">Quarto tipo</option>
+    </div>
+  </article>
+</div>

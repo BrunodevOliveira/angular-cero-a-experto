@@ -16,6 +16,23 @@ img {
     padding-inline: 1rem;
     padding-block: .5rem;
   }
+
+  article {
+    display: flex;
+    justify-content: center;
+
+    textarea {
+      border: 1px solid #42424247;
+      height: 120px;
+      width: 80%;
+      resize: none;
+      border-radius: 4px;
+      color: #42424247;
+      font-weight: 700;
+
+      &, ::placeholder {padding: 8px; }
+    }
+  }
 }
 
 .acoes {

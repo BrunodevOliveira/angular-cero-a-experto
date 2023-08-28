@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { finalize, Subject, switchMap, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-error-page',

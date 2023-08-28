@@ -8,6 +8,8 @@
 		<label>Calificación</label>
 		<input-star-rating formControlName="rating" />
 		<span class="error" *ngIf="formulario.controls['rating'].hasError('min')">La calificación mínima es 3</span>
+
+    <Select-custom />
 		<button type="button" (click)="clickSave()">Save</button>
 	</form>
 </div>
